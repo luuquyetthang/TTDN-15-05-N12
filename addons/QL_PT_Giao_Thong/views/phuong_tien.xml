@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <!-- Form view cho Phương Tiện -->
+        <record id="view_phuong_tien_form" model="ir.ui.view">
+            <field name="name">phuong.tien.form</field>
+            <field name="model">phuong_tien</field>
+            <field name="arch" type="xml">
+                <form string="Phương Tiện">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" string="Biển số xe"/>
+                                <field name="model" string="Model"/>
+                                <field name="manufacturer" string="Hãng sản xuất"/>
+                                <field name="year" string="Năm sản xuất"/>
+                                <field name="status" string="Trạng thái"/>
+                                <field name="driver_id" string="Xe được giao"/>
+                            </group>
+                        </group>
+                        <group>
+                            <!-- Liên kết thông tin nhiên liệu -->
+                            <field name="fuel_ids" string="Thông tin nhiên liệu" widget="one2many_list"/>
+                            <!-- Liên kết thông tin GPS -->
+                            <field name="gps_ids" string="Thông tin GPS" widget="one2many_list"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view cho Phương Tiện -->
+        <record id="view_phuong_tien_tree" model="ir.ui.view">
+            <field name="name">phuong.tien.tree</field>
+            <field name="model">phuong_tien</field>
+            <field name="arch" type="xml">
+                <tree string="Danh sách Phương Tiện">
+                    <field name="name" string="Biển số xe"/>
+                    <field name="model" string="Model"/>
+                    <field name="manufacturer" string="Hãng sản xuất"/>
+                    <field name="year" string="Năm sản xuất"/>
+                    <field name="status" string="Trạng thái"/>
+                    <field name="driver_id" string="Xe được giao"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action cho Phương Tiện -->
+        <record id="action_phuong_tien" model="ir.actions.act_window">
+            <field name="name">Phương Tiện</field>
+            <field name="res_model">phuong_tien</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_phuong_tien_tree"/>
+        </record>
+
+        <!-- Menu Item cho Phương Tiện -->
+        <menuitem id="menu_phuong_tien" name="Phương Tiện" parent="base.menu_custom" action="action_phuong_tien"/>
+    </data>
+</odoo>

@@ -1,0 +1,49 @@
+<odoo>
+    <!-- Form View -->
+    <record id="view_bao_tri_xe_form" model="ir.ui.view">
+        <field name="name">bao_tri_xe.form</field>
+        <field name="model">bao_tri_xe</field>
+        <field name="arch" type="xml">
+            <form string="Bảo dưỡng xe">
+                <sheet>
+                    <group>
+                        <field name="vehicle_id" string="Xe"/>
+                        <field name="maintenance_date" string="Ngày bảo dưỡng"/>
+                        <field name="description" string="Miêu tả" widget="text"/>
+                        <field name="cost" string="Chi phí"/>
+                        <field name="next_maintenance_date" string="Ngày bảo dưỡng tiếp theo"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_bao_tri_xe_tree" model="ir.ui.view">
+        <field name="name">bao_tri_xe.tree</field>
+        <field name="model">bao_tri_xe</field>
+        <field name="arch" type="xml">
+            <tree string="Danh sách bảo dưỡng xe">
+                <field name="vehicle_id" string="Xe"/>
+                <field name="maintenance_date" string="Ngày bảo dưỡng"/>
+                <field name="description" string="Miêu tả" widget="text"/>
+                <field name="cost" string="Chi phí"/>
+                <field name="next_maintenance_date" string="Ngày bảo dưỡng tiếp theo"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_bao_tri_xe" model="ir.actions.act_window">
+        <field name="name">Danh sách bảo trì xe</field>
+        <field name="res_model">bao_tri_xe</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_bao_tri_xe_root" name="Bảo trì xe"/>
+
+    <menuitem id="menu_bao_tri_xe" name="Danh sách bảo trì xe"
+        parent="menu_bao_tri_xe_root"
+        action="action_bao_tri_xe"/>
+</odoo>

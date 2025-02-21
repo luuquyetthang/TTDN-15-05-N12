@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem
+            id="menu_root"
+            name="QL_PT_Giao_Thong"
+            sequence="0"/>
+          
+        <menuitem name="Quản lý phương tiện" 
+            id="menu_phuong_tien" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_phuong_tien"
+        />
+        <menuitem name="Quản lý tài xế" 
+            id="menu_tai_xe" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_tai_xe"
+        />
+        <menuitem name="Quản lý chuyến đi" 
+            id="menu_chuyen_di" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_chuyen_di"
+        />
+         <menuitem name="Bảo trì xe" 
+            id="menu_bao_tri_xe" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_bao_tri_xe"
+        />
+        <menuitem name="Nhiên liệu" 
+            id="menu_nhien_lieu" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_nhien_lieu"
+        />
+        <menuitem name="Cập nhật vị trí" 
+            id="menu_vi_tri" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_vi_tri"
+        />
+    </data>
+</odoo>

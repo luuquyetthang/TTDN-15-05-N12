@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Form View for TaiXe -->
+        <record id="view_tai_xe_form" model="ir.ui.view">
+            <field name="name">tai_xe.form</field>
+            <field name="model">tai_xe</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Thông tin tài xế</div>
+                        <group col="4" string="Thông tin tài xế">
+                            <field name="name" string="Tên đầy đủ" required="1"/>
+                            <field name="license_number" string="Số giấy phép" required="1"/>
+                            <field name="phone" string="Số điện thoại"/>
+                        </group>
+                    </sheet>
+                    <notebook>
+                        <page string="Xe được chỉ định">
+                            <field name="assigned_vehicle" widget="one2many_list"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View for TaiXe -->
+        <record id="view_tai_xe_tree" model="ir.ui.view">
+            <field name="name">tai_xe.tree</field>
+            <field name="model">tai_xe</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Tên đầy đủ"/>
+                    <field name="license_number" string="Số giấy phép"/>
+                    <field name="phone" string="Số điện thoại"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action to open TaiXe views -->
+        <record id="action_tai_xe" model="ir.actions.act_window">
+            <field name="name">Quản lý tài xế</field>
+            <field name="res_model">tai_xe</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_tai_xe_tree"/>
+        </record>
+
+        <!-- Menuitem to access TaiXe -->
+        <menuitem id="menu_tai_xe" name="Quản lý tài xế" parent="menu_root" action="action_tai_xe" sequence="1"/>
+
+    </data>
+</odoo>

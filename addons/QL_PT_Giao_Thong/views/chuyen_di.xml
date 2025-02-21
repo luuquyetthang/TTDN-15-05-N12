@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View for Fleet Trip -->
+        <record id="view_chuyen_di_form" model="ir.ui.view">
+            <field name="name">chuyen_di.form</field>
+            <field name="model">chuyen_di</field>
+            <field name="arch" type="xml">
+                <form string="Quản lý chuyến đi">
+                    <sheet>
+                        <group string="Thông tin chuyến đi">
+                            <field name="name" string="Tên chuyến đi" required="1"/>
+                            <field name="vehicle_id" string="Phương tiện" required="1"/>
+                            <field name="driver_id" string="Tài xế" required="1"/>
+                            <field name="start_location" string="Điểm xuất phát"/>
+                            <field name="end_location" string="Điểm đến"/>
+                            <field name="date" string="Ngày chuyến đi"/>
+                            <field name="status" string="Trạng thái"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View for Fleet Trip -->
+        <record id="view_chuyen_di_tree" model="ir.ui.view">
+            <field name="name">chuyen_di.tree</field>
+            <field name="model">chuyen_di</field>
+            <field name="arch" type="xml">
+                <tree string="Danh sách chuyến đi">
+                    <field name="name" string="Tên chuyến đi" required="1"/>
+                            <field name="vehicle_id" string="Phương tiện" required="1"/>
+                            <field name="driver_id" string="Tài xế" required="1"/>
+                            <field name="start_location" string="Điểm xuất phát"/>
+                            <field name="end_location" string="Điểm đến"/>
+                            <field name="date" string="Ngày chuyến đi"/>
+                            <field name="status" string="Trạng thái"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Search View for Fleet Trip -->
+        <record id="view_chuyen_di_search" model="ir.ui.view">
+            <field name="model">chuyen_di</field>
+            <field name="arch" type="xml">
+                <search string="Tìm kiếm chuyến đi">
+                    <field name="name"/>
+                    <field name="vehicle_id"/>
+                    <field name="driver_id"/>
+                    <field name="status"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action to link the views -->
+        <record id="action_chuyen_di" model="ir.actions.act_window">
+            <field name="name">Quản lý chuyến đi</field>
+            <field name="res_model">chuyen_di</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_chuyen_di_search"/>
+        </record>
+
+        <!-- Menu Item to access Fleet Trip -->
+        <menuitem id="menu_chuyen_di" name="Chuyến đi" parent="base.menu_administration" action="action_chuyen_di" sequence="10"/>
+    </data>
+</odoo>

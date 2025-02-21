@@ -1,0 +1,47 @@
+<odoo>
+    <!-- Form View -->
+    <record id="view_vi_tri_form" model="ir.ui.view">
+        <field name="name">vi_tri.form</field>
+        <field name="model">vi_tri</field>
+        <field name="arch" type="xml">
+            <form string="Theo dõi GPS của xe">
+                <sheet>
+                    <group>
+                        <field name="vehicle_id" string="Phương tiện" />
+                        <field name="latitude" string="Vĩ độ" />
+                        <field name="longitude" string="Kinh độ" />
+                        <field name="timestamp" string="Thời gian cập nhật vị trí" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_vi_tri_tree" model="ir.ui.view">
+        <field name="name">vi_tri.tree</field>
+        <field name="model">vi_tri</field>
+        <field name="arch" type="xml">
+            <tree string="Danh sách vị trí GPS">
+                <field name="vehicle_id" string="Phương tiện"/>
+                <field name="latitude" string="Vĩ độ"/>
+                <field name="longitude" string="Kinh độ"/>
+                <field name="timestamp" string="Thời gian cập nhật"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_vi_tri" model="ir.actions.act_window">
+        <field name="name">Danh sách vị trí GPS</field>
+        <field name="res_model">vi_tri</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_vi_tri_root" name="Theo dõi GPS xe"/>
+
+    <menuitem id="menu_vi_tri" name="Danh sách vị trí GPS"
+        parent="menu_vi_tri_root"
+        action="action_vi_tri"/>
+</odoo>
