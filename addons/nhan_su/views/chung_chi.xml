@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree View (Danh sách Văn Bằng) -->
+    <record id="chung_chi_tree_view" model="ir.ui.view">
+        <field name="name">chung.chi.tree</field>
+        <field name="model">chung.chi</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="so_hieu"/>
+                <field name="ngay_cap"/>
+                <field name="noi_cap"/>
+                <field name="loai_van_bang"/>
+                <field name="nhan_vien_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View (Chi tiết Văn Bằng) -->
+    <record id="chung_chi_form_view" model="ir.ui.view">
+        <field name="name">chung.chi.form</field>
+        <field name="model">chung.chi</field>
+        <field name="arch" type="xml">
+            <form string="Quản Lý Văn Bằng">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="so_hieu"/>
+                            <field name="ngay_cap"/>
+                            <field name="noi_cap"/>
+                            <field name="loai_van_bang"/>
+                        </group>
+                        <group>
+                            <field name="nhan_vien_id"/>
+                            <field name="ma_dinh_danh" readonly="1"/>
+                            <field name="ho_va_ten" readonly="1"/>
+                            <field name="ngay_sinh" readonly="1"/>
+                            <field name="que_quan" readonly="1"/>
+                            <field name="email" readonly="1"/>
+                            <field name="so_dien_thoai" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action để mở view -->
+    <record id="action_chung_chi" model="ir.actions.act_window">
+        <field name="name">Quản Lý Văn Bằng</field>
+        <field name="res_model">chung.chi</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu & Submenu -->
+    <menuitem id="menu_nhan_su" name="Nhân Sự"/>
+
+    <menuitem id="menu_chung_chi" name="Văn Bằng" parent="menu_nhan_su" action="action_chung_chi"/>
+</odoo>

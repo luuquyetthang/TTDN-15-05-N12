@@ -12,12 +12,6 @@
             sequence="1"
             action="action_nhan_vien"
         />
-         <menuitem name="Quản lý phòng ban" 
-            id="menu_phong_ban" 
-            parent="menu_root" 
-            sequence="1"
-            action="action_phong_ban"
-        />
         <menuitem name="Quản lý chức vụ" 
             id="menu_chuc_vu" 
             parent="menu_root" 
@@ -29,6 +23,12 @@
             parent="menu_root" 
             sequence="1"
             action="action_lich_su_cong_tac"
+        />
+        <menuitem name="Quản lý chứng chỉ, bằng cấp" 
+            id="menu_chung_chi" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_chung_chi"
         />
     </data>
 </odoo>

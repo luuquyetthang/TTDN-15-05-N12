@@ -24,6 +24,12 @@ class NhanVien(models.Model):
         inverse_name="nhan_vien_id",
         string="Lịch sử công tác"
     )
+     # Quan hệ với bảng lịch sử công tác
+    chung_chi_ids = fields.One2many(
+        comodel_name="chung.chi",
+        inverse_name="nhan_vien_id",
+        string="Chứng chỉ bằng cấp"
+    )
 
     # Tính toán họ và tên
     @api.depends("ten_dem", "ten_dinh_danh")

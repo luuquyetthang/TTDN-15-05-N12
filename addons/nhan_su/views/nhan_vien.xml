@@ -23,6 +23,9 @@
                             <page string = "Danh sách lịch sử công tác">
                                 <field name="lich_su_cong_tac_ids"/>
                             </page>
+                            <page string = "Danh sách chứng chỉ bằng cấp">
+                                <field name="chung_chi_ids"/>
+                            </page>
                         </notebook>
                 </form>
             </field>
