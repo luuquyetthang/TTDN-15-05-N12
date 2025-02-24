@@ -59,8 +59,6 @@
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="view_chuyen_di_search"/>
         </record>
-
-        <!-- Menu Item to access Fleet Trip -->
-        <menuitem id="menu_chuyen_di" name="Chuyến đi" parent="base.menu_administration" action="action_chuyen_di" sequence="10"/>
+    
     </data>
 </odoo>

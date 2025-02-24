@@ -3,7 +3,7 @@
     <data>
         <menuitem
             id="menu_root"
-            name="QL_PT_Giao_Thong"
+            name="Giao Thông"
             sequence="0"/>
           
         <menuitem name="Quản lý phương tiện" 
@@ -41,6 +41,12 @@
             parent="menu_root" 
             sequence="1"
             action="action_vi_tri"
+        />
+        <menuitem name="Đơn đăng kí tài xế" 
+            id="menu_don_dang_ky" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_don_dang_ky"
         />
     </data>
 </odoo>

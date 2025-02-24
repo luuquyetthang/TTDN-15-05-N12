@@ -17,12 +17,14 @@
                                 <field name="driver_id" string="Xe được giao"/>
                             </group>
                         </group>
-                        <group>
-                            <!-- Liên kết thông tin nhiên liệu -->
-                            <field name="fuel_ids" string="Thông tin nhiên liệu" widget="one2many_list"/>
-                            <!-- Liên kết thông tin GPS -->
-                            <field name="gps_ids" string="Thông tin GPS" widget="one2many_list"/>
-                        </group>
+                        <notebook>
+                            <page string = "Thông tin nhiên liệu">
+                                <field name="fuel_ids"/>
+                            </page>
+                            <page string = "Định vị GPS">
+                                <field name="gps_ids"/>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
@@ -51,8 +53,5 @@
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref="view_phuong_tien_tree"/>
         </record>
-
-        <!-- Menu Item cho Phương Tiện -->
-        <menuitem id="menu_phuong_tien" name="Phương Tiện" parent="base.menu_custom" action="action_phuong_tien"/>
     </data>
 </odoo>

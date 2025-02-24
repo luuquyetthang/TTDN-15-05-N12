@@ -39,11 +39,5 @@
         <field name="res_model">bao_tri_xe</field>
         <field name="view_mode">tree,form</field>
     </record>
-
-    <!-- Menu -->
-    <menuitem id="menu_bao_tri_xe_root" name="Bảo trì xe"/>
-
-    <menuitem id="menu_bao_tri_xe" name="Danh sách bảo trì xe"
-        parent="menu_bao_tri_xe_root"
-        action="action_bao_tri_xe"/>
+    
 </odoo>

@@ -6,3 +6,4 @@ from . import chuyen_di
 from . import bao_tri_xe
 from . import nhien_lieu
 from . import vi_tri
+from . import don_dang_ky

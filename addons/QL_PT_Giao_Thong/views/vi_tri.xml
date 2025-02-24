@@ -36,12 +36,5 @@
         <field name="name">Danh sách vị trí GPS</field>
         <field name="res_model">vi_tri</field>
         <field name="view_mode">tree,form</field>
-    </record>
-
-    <!-- Menu -->
-    <menuitem id="menu_vi_tri_root" name="Theo dõi GPS xe"/>
-
-    <menuitem id="menu_vi_tri" name="Danh sách vị trí GPS"
-        parent="menu_vi_tri_root"
-        action="action_vi_tri"/>
+    </record>  
 </odoo>

@@ -39,11 +39,4 @@
         <field name="res_model">nhien_lieu</field>
         <field name="view_mode">tree,form</field>
     </record>
-
-    <!-- Menu -->
-    <menuitem id="menu_nhien_lieu_root" name="Quản lý nhiên liệu"/>
-
-    <menuitem id="menu_nhien_lieu" name="Danh sách nhiên liệu"
-        parent="menu_nhien_lieu_root"
-        action="action_nhien_lieu"/>
 </odoo>

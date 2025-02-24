@@ -5,3 +5,4 @@ access_tai_xe,tai_xe.tai_xe,model_tai_xe,base.group_user,1,1,1,1
 access_bao_tri_xe,bao_tri_xe.bao_tri_xe,model_bao_tri_xe,base.group_user,1,1,1,1
 access_nhien_lieu,nhien_lieu.nhien_lieu,model_nhien_lieu,base.group_user,1,1,1,1
 access_vi_tri,vi_tri.vi_tri,model_vi_tri,base.group_user,1,1,1,1
+access_don_dang_ky,don_dang_ky.don_dang_ky,model_don_dang_ky,base.group_user,1,1,1,1
