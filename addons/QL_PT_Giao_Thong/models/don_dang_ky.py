@@ -4,7 +4,8 @@ class dondangky(models.Model):
     _name = "don_dang_ky"
     _description = "Đơn xin đăng ký làm tài xế"
 
-    tai_xe_id = fields.Many2one('tai_xe', string="Tài xế", required=True)
+    name = fields.Char(string="Tên đơn")
+    tai_xe_id = fields.Many2one('tai_xe', string="Tài xế", ondelete='cascade') 
     ngay_dang_ky = fields.Date(string="Ngày đăng ký", default=fields.Date.today)
     can_cuoc = fields.Integer(string="Căn cước công dân")
     trang_thai = fields.Selection([
@@ -22,6 +23,6 @@ class dondangky(models.Model):
         return record
 # Ràng buộc: Một nhân viên chỉ có thể đăng ký 1 đơn đang chờ duyệt
     _sql_constraints = [
-        ('unique_don_cho_duyet', 'UNIQUE(nhan_vien_id, trang_thai,can_cuoc)',
+        ('unique_don_cho_duyet', 'UNIQUE(nhan_vien_id, trang_thai)',
          'Mỗi nhân viên chỉ có thể có một đơn "Chờ duyệt"!')
     ]

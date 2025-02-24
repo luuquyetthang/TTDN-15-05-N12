@@ -5,6 +5,10 @@ class PhuongTien(models.Model):
     _description = "Danh mục phương tiện"
 
     name = fields.Char(string="Biển số xe", required=True)  # Biển số xe
+    loai_xe = fields.Selection([
+        ('motor','xe máy'),
+        ('car','Ô tô'),
+    ])
     model = fields.Char(string="Model")  # Mẫu xe (ví dụ: Toyota Camry)
     manufacturer = fields.Char(string="Hãng sản xuất")  # Hãng sản xuất (Toyota, Honda, Ford...)
     year = fields.Integer(string="Năm sản xuất")  # Năm sản xuất

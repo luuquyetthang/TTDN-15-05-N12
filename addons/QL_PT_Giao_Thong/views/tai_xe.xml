@@ -20,6 +20,9 @@
                         <page string="Xe được chỉ định">
                             <field name="assigned_vehicle" widget="one2many_list"/>
                         </page>
+                        <page string="Đơn Đăng kí">
+                            <field name="don_dang_ky_ids" widget="one2many_list"/>
+                        </page>
                     </notebook>
                 </form>
             </field>

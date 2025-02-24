@@ -7,6 +7,7 @@
             <form string="Đơn xin đăng ký tài xế">
                 <sheet>
                     <group col="4">
+                        <field name="name" string="Tên đơn đăng kí"/>
                         <field name="tai_xe_id" string="Tài xế" required="1"/>
                         <field name="ngay_dang_ky" string="Ngày đăng ký"/>
                         <field name="can_cuoc" string="Căn cước công dân" required ="1"/>
@@ -24,6 +25,7 @@
         <field name="model">don_dang_ky</field>
         <field name="arch" type="xml">
             <tree string="Danh sách đơn đăng ký tài xế">
+                <field name="name" string="Tên đơn đăng kí"/>
                 <field name="tai_xe_id" string="Nhân viên"/>
                 <field name="can_cuoc" string="Căn cước công dân"/>
                 <field name="ngay_dang_ky" string="Ngày đăng ký"/>

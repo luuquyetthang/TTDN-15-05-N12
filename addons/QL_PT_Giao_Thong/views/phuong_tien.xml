@@ -10,6 +10,7 @@
                         <group>
                             <group>
                                 <field name="name" string="Biển số xe"/>
+                                <field name="loai_xe" string="Loại xe"/>
                                 <field name="model" string="Model"/>
                                 <field name="manufacturer" string="Hãng sản xuất"/>
                                 <field name="year" string="Năm sản xuất"/>
@@ -37,6 +38,7 @@
             <field name="arch" type="xml">
                 <tree string="Danh sách Phương Tiện">
                     <field name="name" string="Biển số xe"/>
+                    <field name="loai_xe" string="Loại xe"/>
                     <field name="model" string="Model"/>
                     <field name="manufacturer" string="Hãng sản xuất"/>
                     <field name="year" string="Năm sản xuất"/>
