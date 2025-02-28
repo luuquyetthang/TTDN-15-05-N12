@@ -1,6 +1,6 @@
 from odoo import models, fields
 
-class FleetFuel(models.Model):
+class NhienLieu(models.Model):
     _name = "nhien_lieu"
     _description = "Quản lý nhiên liệu"
 

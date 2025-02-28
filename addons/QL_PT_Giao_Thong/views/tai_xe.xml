@@ -21,14 +21,13 @@
                             <field name="assigned_vehicle" widget="one2many_list"/>
                         </page>
                         <page string="Đơn Đăng kí">
-                            <field name="don_dang_ky_ids" widget="one2many_list"/>
+                            <field name="don_dang_ky_ids" widget="one2many_list" readonly = "1" />
                         </page>
                     </notebook>
                 </form>
             </field>
         </record>
 
-        <!-- Tree View for TaiXe -->
         <record id="view_tai_xe_tree" model="ir.ui.view">
             <field name="name">tai_xe.tree</field>
             <field name="model">tai_xe</field>
@@ -37,16 +36,17 @@
                     <field name="name" string="Tên đầy đủ"/>
                     <field name="license_number" string="Số giấy phép"/>
                     <field name="phone" string="Số điện thoại"/>
+                    <field name="trang_thai" string="Trạng thái"/>
                 </tree>
             </field>
         </record>
-
-        <!-- Action to open TaiXe views -->
+        
         <record id="action_tai_xe" model="ir.actions.act_window">
             <field name="name">Quản lý tài xế</field>
             <field name="res_model">tai_xe</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="view_tai_xe_tree"/>
+            <field name="domain">[]</field>  <!-- Xóa domain nếu có -->
+            
         </record>
 
     </data>

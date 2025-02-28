@@ -10,16 +10,24 @@
                         <field name="name" string="Tên đơn đăng kí"/>
                         <field name="tai_xe_id" string="Tài xế" required="1"/>
                         <field name="ngay_dang_ky" string="Ngày đăng ký"/>
-                        <field name="can_cuoc" string="Căn cước công dân" required ="1"/>
+                        <field name="can_cuoc" string="Căn cước công dân" required="1"/>
                         <field name="trang_thai" string="Trạng thái" readonly="1"/>
                         <field name="ghi_chu" string="Ghi chú" widget="text"/>
                     </group>
+                    <!-- <footer>
+                        <button name="action_cho_duyet" type="object" string="Chờ duyệt" 
+                                class="oe_highlight" attrs="{'invisible': [('trang_thai', '=', 'cho_duyet')]}" />
+                        <button name="action_duyet" type="object" string="Duyệt" 
+                                class="btn-primary" attrs="{'invisible': [('trang_thai', '=', 'duyet')]}" />
+                        <button name="action_huy" type="object" string="Hủy" 
+                                class="btn-danger" attrs="{'invisible': [('trang_thai', '=', 'huy')]}" />
+                    </footer> -->
                 </sheet>
             </form>
         </field>
     </record>
 
-    <!-- Tree View -->
+
     <record id="view_don_dang_ky_tree" model="ir.ui.view">
         <field name="name">don_dang_ky.tree</field>
         <field name="model">don_dang_ky</field>
@@ -29,15 +37,26 @@
                 <field name="tai_xe_id" string="Nhân viên"/>
                 <field name="can_cuoc" string="Căn cước công dân"/>
                 <field name="ngay_dang_ky" string="Ngày đăng ký"/>
-                <field name="trang_thai" string="Trạng thái"/>
+                <field name="trang_thai" string="Trạng thái" readonly="1"/>
+                <field name="ghi_chu" string="Ghi chú" widget="text"/>
+                
+                <button name="action_cho_duyet" type="object" string="Chờ duyệt"
+                        class="oe_highlight" attrs="{'invisible': [('trang_thai', '=', 'cho_duyet')]}" />
+                <button name="action_duyet" type="object" string="Duyệt"
+                        class="btn-primary" attrs="{'invisible': [('trang_thai', '=', 'duyet')]}" />
+                <button name="action_huy" type="object" string="Hủy"
+                        class="btn-danger" attrs="{'invisible': [('trang_thai', '=', 'huy')]}" />
             </tree>
         </field>
     </record>
 
-    <!-- Action -->
+    
     <record id="action_don_dang_ky" model="ir.actions.act_window">
         <field name="name">Đơn đăng ký tài xế</field>
         <field name="res_model">don_dang_ky</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="domain">[]</field>
+
     </record>
+
 </odoo>

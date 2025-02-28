@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_lich_su_xe_tree" model="ir.ui.view">
+        <field name="name">lich.su.xe.tree</field>
+        <field name="model">lich_su_xe</field>
+        <field name="arch" type="xml">
+            <tree string="Lịch Sử Xe">
+                <field name="name"/>
+                <field name="vehicle_id"/>
+                <field name="ngay_su_dung"/>
+                <field name="km_bat_dau"/>
+                <field name="km_ket_thuc"/>
+                <field name="tai_xe_id"/>
+                <field name="tinh_trang_xe"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_lich_su_xe_form" model="ir.ui.view">
+        <field name="name">lich.su.xe.form</field>
+        <field name="model">lich_su_xe</field>
+        <field name="arch" type="xml">
+            <form string="Lịch Sử Xe">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="vehicle_id"/>
+                            <field name="ngay_su_dung"/>
+                            <field name="tai_xe_id"/>
+                        </group>
+                        <group>
+                            <field name="km_bat_dau"/>
+                            <field name="km_ket_thuc"/>
+                            <field name="tinh_trang_xe"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="noi_dung_su_dung"/>
+                        <field name="ngay_bao_duong"/>
+                        <field name="ghi_chu"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_lich_su_xe" model="ir.actions.act_window">
+        <field name="name">Lịch Sử Xe</field>
+        <field name="res_model">lich_su_xe</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

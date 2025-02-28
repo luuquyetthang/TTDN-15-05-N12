@@ -6,3 +6,6 @@ access_bao_tri_xe,bao_tri_xe.bao_tri_xe,model_bao_tri_xe,base.group_user,1,1,1,1
 access_nhien_lieu,nhien_lieu.nhien_lieu,model_nhien_lieu,base.group_user,1,1,1,1
 access_vi_tri,vi_tri.vi_tri,model_vi_tri,base.group_user,1,1,1,1
 access_don_dang_ky,don_dang_ky.don_dang_ky,model_don_dang_ky,base.group_user,1,1,1,1
+access_lich_su_xe,lich_su_xe.lich_su_xe,model_lich_su_xe,base.group_user,1,1,1,1
+access_khach_thue,khach_thue.khach_thue,model_khach_thue,base.group_user,1,1,1,1
+access_don_thue_xe,don_thue_xe.don_thue_xe,model_don_thue_xe,base.group_user,1,1,1,1

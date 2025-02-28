@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_khach_thue_form" model="ir.ui.view">
+        <field name="name">khach.thue.form</field>
+        <field name="model">khach_thue</field>
+        <field name="arch" type="xml">
+            <form string="Khách Thuê">
+                    <group col ="4">
+                            <field name="ten_khach"/>
+                            <field name="sdt_khach"/>
+                            <field name="dia_chi"/>
+                            <field name="can_cuoc"/>
+                      
+                    </group>
+                    <notebook>
+                            <page string = "Đơn thuê xe">
+                                <field name="don_thue_xe_ids"/>
+                            </page>
+                    </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_khach_thue_tree" model="ir.ui.view">
+        <field name="name">khach.thue.tree</field>
+        <field name="model">khach_thue</field>
+        <field name="arch" type="xml">
+            <tree string="Khách Thuê">
+                <field name="ten_khach"/>
+                <field name="sdt_khach"/>
+                <field name="dia_chi"/>
+                <field name="can_cuoc"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_khach_thue" model="ir.actions.act_window">
+        <field name="name">Khách Thuê</field>
+        <field name="res_model">khach_thue</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

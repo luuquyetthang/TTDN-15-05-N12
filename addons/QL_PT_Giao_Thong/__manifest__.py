@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Giao Thông",
+    'name': "Quản Lý Phương Tiện",
 
     'summary': """
         Quản lý phương tiện giao thông, đăng kiểm và bảo dưỡng""",
@@ -31,6 +31,9 @@
         'views/nhien_lieu.xml',
         'views/vi_tri.xml',
         'views/don_dang_ky.xml',
+        'views/lich_su_xe.xml',
+        'views/khach_thue.xml',
+        'views/don_thue_xe.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode

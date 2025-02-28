@@ -1,0 +1,14 @@
+.o_menu_systray .dropdown-menu.show .dropdown-item.active,
+.o_menu_systray .dropdown-menu.show .dropdown-item:hover {
+    background-color: orange !important;
+    color: white !important;
+}
+
+.o_web_client .o_main_navbar .o_menu_brand {
+    background-color: orange !important;
+    color: white !important;
+}
+.custom-orange-menu a {
+    background-color: orange !important;
+    color: white !important;
+}

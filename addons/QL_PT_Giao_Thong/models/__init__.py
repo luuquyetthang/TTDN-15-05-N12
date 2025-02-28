@@ -7,3 +7,6 @@ from . import bao_tri_xe
 from . import nhien_lieu
 from . import vi_tri
 from . import don_dang_ky
+from . import lich_su_xe
+from . import khach_thue
+from . import don_thue_xe
