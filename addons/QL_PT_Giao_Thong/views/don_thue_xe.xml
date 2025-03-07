@@ -1,39 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Form View -->
+    <record id="view_don_thue_xe_tree" model="ir.ui.view">
+        <field name="name">don.thue.xe.tree</field>
+        <field name="model">don_thue_xe</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string = "Tên khách hàng"/>
+                <field name="ma_don" string = "Tên đơn"/>
+                <field name="sdt_khach" string = "Số điện thoại khách hàng"/>
+                <field name="can_cuoc" string = "Căn cước công dân"/>
+                <field name="khach_id" invisible="1"/>
+                <field name="dia_chi" string = "Địa chỉ đón khách"/>
+                <field name="xe" string = "Loại xe"/>
+                <field name="trang_thai" string = "Trạng thái" />
+
+                <button name="action_cho_duyet" string="Chờ duyệt" type="object" class="btn-secondary"  
+                    icon="fa-clock" attrs="{'invisible': [('trang_thai', '=', 'cho_duyet')]}"/>  
+
+                <button name="action_duyet" string="Duyệt" type="object" class="btn-success"  
+                    icon="fa-check" attrs="{'invisible': [('trang_thai', '=', 'duyet')]}"/>  
+
+                <button name="action_huy" string="Hủy" type="object" class="btn-danger"  
+                    icon="fa-times" attrs="{'invisible': [('trang_thai', '=', 'huy')]}"/>  
+
+            </tree>
+        </field>
+    </record>
+
     <record id="view_don_thue_xe_form" model="ir.ui.view">
         <field name="name">don.thue.xe.form</field>
         <field name="model">don_thue_xe</field>
         <field name="arch" type="xml">
-            <form string="Đơn Thuê Xe">
+            <form string="Đơn thuê xe">
                 <sheet>
                     <group col="4">
-                            <field name="ten_don"/>
-                            <field name="ten_khach_id"/>
-                            <field name="dia_chi_don"/>
-                            <field name="xe"/>
+                        <field name="name" string = "Tên khách hàng"/>
+                        <field name="sdt_khach" string = "Số điện thoại khách hàng"/>
+                        <field name="ma_don" string = "Tên đơn"/>
+                        <field name="can_cuoc" string = "Căn cước công dân"/>
+                        <field name="khach_id" invisible="1"/>
+                        <field name="dia_chi" string = "Địa chỉ đón khách"/>
+                        <field name="xe" string = "Loại xe"/>
+                        <field name="trang_thai" string = "Trạng thái" readonly = "1"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <record id="view_don_thue_xe_tree" model="ir.ui.view">
-        <field name="name">don.thue.xe.tree</field>
+    <record id="view_don_thue_xe_search" model="ir.ui.view">
+        <field name="name">don.thue.xe.search</field>
         <field name="model">don_thue_xe</field>
         <field name="arch" type="xml">
-            <tree string="Đơn Thuê Xe">
-                <field name="ten_don"/>
-                <field name="ten_khach_id"/>
-                <field name="dia_chi_don"/>
-                <field name="xe"/>
-            </tree>
+            <search>
+                <field name="name"/>
+                <field name="sdt_khach"/>
+                <field name="ma_don"/>
+                <field name="trang_thai"/>
+            </search>
         </field>
     </record>
 
-    <!-- Action -->
+    
     <record id="action_don_thue_xe" model="ir.actions.act_window">
-        <field name="name">Đơn Thuê Xe</field>
+        <field name="name">Quản lý đơn thuê xe</field>
         <field name="res_model">don_thue_xe</field>
         <field name="view_mode">tree,form</field>
     </record>
+
 </odoo>

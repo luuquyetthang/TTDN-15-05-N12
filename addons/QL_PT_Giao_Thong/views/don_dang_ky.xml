@@ -7,21 +7,17 @@
             <form string="Đơn xin đăng ký tài xế">
                 <sheet>
                     <group col="4">
-                        <field name="name" string="Tên đơn đăng kí"/>
-                        <field name="tai_xe_id" string="Tài xế" required="1"/>
+                        <field name="ten_don_dk" string="Tên đơn đăng kí"/>
+                        <field name="name" string="Tên đầy đủ"/>
+                        <field name="license_number" string="Số giấy phép"/>
+                        <field name="phone" string="Số điện thoại"/>
                         <field name="ngay_dang_ky" string="Ngày đăng ký"/>
                         <field name="can_cuoc" string="Căn cước công dân" required="1"/>
                         <field name="trang_thai" string="Trạng thái" readonly="1"/>
                         <field name="ghi_chu" string="Ghi chú" widget="text"/>
+                        <field name="tai_xe_id" string="Tài xế" required="1" invisible="1"/>
                     </group>
-                    <!-- <footer>
-                        <button name="action_cho_duyet" type="object" string="Chờ duyệt" 
-                                class="oe_highlight" attrs="{'invisible': [('trang_thai', '=', 'cho_duyet')]}" />
-                        <button name="action_duyet" type="object" string="Duyệt" 
-                                class="btn-primary" attrs="{'invisible': [('trang_thai', '=', 'duyet')]}" />
-                        <button name="action_huy" type="object" string="Hủy" 
-                                class="btn-danger" attrs="{'invisible': [('trang_thai', '=', 'huy')]}" />
-                    </footer> -->
+
                 </sheet>
             </form>
         </field>
@@ -33,19 +29,24 @@
         <field name="model">don_dang_ky</field>
         <field name="arch" type="xml">
             <tree string="Danh sách đơn đăng ký tài xế">
-                <field name="name" string="Tên đơn đăng kí"/>
-                <field name="tai_xe_id" string="Nhân viên"/>
-                <field name="can_cuoc" string="Căn cước công dân"/>
+                <field name="ten_don_dk" string="Tên đơn đăng kí"/>
+                <field name="name" string="Tên đầy đủ"/>
+                <field name="license_number" string="Số giấy phép"/>
+                <field name="phone" string="Số điện thoại"/>
                 <field name="ngay_dang_ky" string="Ngày đăng ký"/>
+                <field name="can_cuoc" string="Căn cước công dân" required="1"/>
                 <field name="trang_thai" string="Trạng thái" readonly="1"/>
                 <field name="ghi_chu" string="Ghi chú" widget="text"/>
+                <field name="tai_xe_id" string="Tài xế" required="1" invisible="1"/>
                 
-                <button name="action_cho_duyet" type="object" string="Chờ duyệt"
-                        class="oe_highlight" attrs="{'invisible': [('trang_thai', '=', 'cho_duyet')]}" />
-                <button name="action_duyet" type="object" string="Duyệt"
-                        class="btn-primary" attrs="{'invisible': [('trang_thai', '=', 'duyet')]}" />
-                <button name="action_huy" type="object" string="Hủy"
-                        class="btn-danger" attrs="{'invisible': [('trang_thai', '=', 'huy')]}" />
+                <button name="action_cho_duyet" string="Chờ duyệt" type="object" class="btn-secondary"  
+                    icon="fa-clock" attrs="{'invisible': [('trang_thai', '=', 'cho_duyet')]}"/>  
+
+                <button name="action_duyet" string="Duyệt" type="object" class="btn-success"  
+                    icon="fa-check" attrs="{'invisible': [('trang_thai', '=', 'duyet')]}"/>  
+
+                <button name="action_huy" string="Hủy" type="object" class="btn-danger"  
+                    icon="fa-times" attrs="{'invisible': [('trang_thai', '=', 'huy')]}"/>  
             </tree>
         </field>
     </record>

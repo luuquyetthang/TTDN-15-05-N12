@@ -34,12 +34,13 @@
         'views/lich_su_xe.xml',
         'views/khach_thue.xml',
         'views/don_thue_xe.xml',
+        'views/loai_xe.xml',
+        'views/thong_ke.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
-     # Khai báo logo cho module
 
 }

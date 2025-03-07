@@ -1,0 +1,48 @@
+<odoo>
+    <!-- Tree View -->
+    <record id="view_loai_xe_tree" model="ir.ui.view">
+        <field name="name">loai_xe.tree</field>
+        <field name="model">loai_xe</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+                 <field name="phuong_tien_count" string="Số lượng xe" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_loai_xe_form" model="ir.ui.view">
+    <field name="name">loai.xe.form</field>
+    <field name="model">loai_xe</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="description"/>
+                     <field name="phuong_tien_count" string="Số lượng xe" readonly="1"/>
+                </group>
+                <notebook>
+                    <page string="Danh sách phương tiện">
+                        <field name="phuong_tien_ids" readonly="1">
+                            <tree editable="false">
+                                <field name="name" string="Biển số xe"/>
+                                <field name="manufacturer" string="Hãng sản xuất"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+
+    <!-- Action -->
+    <record id="action_loai_xe" model="ir.actions.act_window">
+        <field name="name">Danh Mục Loại Xe</field>
+        <field name="res_model">loai_xe</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -13,6 +13,7 @@
                         <field name="description" string="Miêu tả" widget="text"/>
                         <field name="cost" string="Chi phí"/>
                         <field name="next_ngay_ket_thuc" string="Ngày bảo dưỡng tiếp theo"/>
+                        <field name="trang_thai" string="Trạng thái" readonly="1"/>
                     </group>
                 </sheet>
             </form>
@@ -31,6 +32,16 @@
                 <field name="description" string="Miêu tả" widget="text"/>
                 <field name="cost" string="Chi phí"/>
                 <field name="next_ngay_ket_thuc" string="Ngày bảo dưỡng tiếp theo"/>
+                <field name="trang_thai" string="Trạng thái"/>
+
+                <button name="action_dang_bao_tri" type="object" string="Đang bảo dưỡng"  
+                    class="btn-warning" icon="fa-wrench"  
+                    attrs="{'invisible': [('trang_thai', '=', 'dang_bao_tri')]}" />  
+
+                <button name="action_da_xong" type="object" string="Đã Xong"  
+                    class="btn-success" icon="fa-check-circle"  
+                    attrs="{'invisible': [('trang_thai', '=', 'da_xong')]}" />  
+
             </tree>
         </field>
     </record>

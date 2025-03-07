@@ -1,8 +1,8 @@
 version: '3.5'
 
 services:
-  postgres-odoo-base-nhom-12:
-    container_name: postgres_odoo-base-nhom-12
+  postgres-odoo-base-nhom-12-ne:
+    container_name: postgres_odoo-base-nhom-12-ne
     image: postgres:10-alpine
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-postgres}

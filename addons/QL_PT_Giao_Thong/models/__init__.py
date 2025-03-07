@@ -10,3 +10,5 @@ from . import don_dang_ky
 from . import lich_su_xe
 from . import khach_thue
 from . import don_thue_xe
+from . import loai_xe
+from . import thong_ke

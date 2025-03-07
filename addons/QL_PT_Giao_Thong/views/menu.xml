@@ -1,73 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- Menu Gốc -->
         <menuitem id="menu_root" name="Quản Lý Phương Tiện" sequence="0"/>
+        <menuitem name="Danh mục phương tiện"
+                  id="menu_chinh"
+                  parent="menu_root"
+                  sequence="1"/>
 
-        <!-- Nhóm Menu Con (Chỉ xuất hiện trên thanh menu, không có action) -->
-        <menuitem id="menu_group_phuong_tien" name="Danh Mục Quản Lý" parent="menu_root" sequence="1"/>
+        <menuitem name="Quản lý phương tiện"
+                  id="menu_phuong_tien"
+                  parent="menu_chinh"
+                  sequence="2"
+                  action="action_phuong_tien"/>
 
-        <!-- Menu Con thuộc nhóm -->
-        <menuitem name="Quản lý phương tiện" 
-            id="menu_phuong_tien" 
-            parent="menu_group_phuong_tien" 
-            sequence="2"
-            action="action_phuong_tien"
-        />
+        
+        <menuitem name="Quản lý chuyến đi"
+                  id="menu_chuyen_di"
+                  parent="menu_chinh"
+                  sequence="3"
+                  action="action_chuyen_di"/>
+
+        <menuitem name="Bảo trì xe"
+                  id="menu_bao_tri_xe"
+                  parent="menu_chinh"
+                  sequence="4"
+                  action="action_bao_tri_xe"/>
+
+        <menuitem name="Nhiên liệu"
+                  id="menu_nhien_lieu"
+                  parent="menu_chinh"
+                  sequence="5"
+                  action="action_nhien_lieu"/>
+
+        <menuitem name="Cập nhật vị trí"
+                  id="menu_vi_tri"
+                  parent="menu_chinh"
+                  sequence="6"
+                  action="action_vi_tri"/>
+
+        <menuitem name="Lịch sử xe"
+                  id="menu_lich_su_xe"
+                  parent="menu_chinh"
+                  sequence="7"
+                  action="action_lich_su_xe"/>
+        <menuitem name="Loại xe"
+                  id="menu_loai_xe"
+                  parent="menu_chinh"
+                  sequence="8"
+                  action="action_loai_xe"/>
+
+         <menuitem name="Danh mục tài xế"
+                  id="menu_tai"
+                  parent="menu_root"
+                  sequence="1"/>
+       
         <menuitem name="Quản lý tài xế" 
-            id="menu_tai_xe" 
-            parent="menu_group_phuong_tien" 
-            sequence="3"
-            action="action_tai_xe"
-        />
-        <menuitem name="Quản lý chuyến đi" 
-            id="menu_chuyen_di" 
-            parent="menu_group_phuong_tien" 
-            sequence="4"
-            action="action_chuyen_di"
-        />
-        <menuitem name="Bảo trì xe" 
-            id="menu_bao_tri_xe" 
-            parent="menu_group_phuong_tien" 
-            sequence="5"
-            action="action_bao_tri_xe"
-        />
-        <menuitem name="Nhiên liệu" 
-            id="menu_nhien_lieu" 
-            parent="menu_group_phuong_tien" 
-            sequence="6"
-            action="action_nhien_lieu"
-        />
-        <menuitem name="Cập nhật vị trí" 
-            id="menu_vi_tri" 
-            parent="menu_group_phuong_tien" 
-            sequence="7"
-            action="action_vi_tri"
-        />
-        <menuitem name="Đơn đăng kí tài xế" 
-            id="menu_don_dang_ky" 
-            parent="menu_group_phuong_tien" 
-            sequence="8"
-            action="action_don_dang_ky"
-        />
-        <menuitem name="Lịch sử xe" 
-            id="menu_lich_su_xe" 
-            parent="menu_group_phuong_tien" 
-            sequence="9"
-            action="action_lich_su_xe"
-        />
-        <menuitem name="Khách thuê xe" 
-            id="menu_khach_thue" 
-            parent="menu_group_phuong_tien" 
-            sequence="10"
-            action="action_khach_thue"
-        />
-         <menuitem name="Đơn thuê xe" 
-            id="menu_don_thue_xe" 
-            parent="menu_group_phuong_tien" 
-            sequence="11"
-            action="action_don_thue_xe"
-        />
+                  id="menu_tai_xe" 
+                  parent="menu_tai"
+                  sequence="2"
+                  action="action_tai_xe"/>
 
+        <menuitem name="Đơn đăng kí tài xế" 
+                  id="menu_don_dang_ky" 
+                  parent="menu_tai"
+                  sequence="3"
+                  action="action_don_dang_ky"/>
+
+       <menuitem name="Danh mục khách"
+                  id="menu_khach"
+                  parent="menu_root"
+                  sequence="1"/>
+
+        <menuitem name="Khách thuê xe" 
+                  id="menu_khach_thue" 
+                  parent="menu_khach"
+                  sequence="2"
+                  action="action_khach_thue"/>
+
+        <menuitem name="Đơn thuê xe" 
+                  id="menu_don_thue_xe" 
+                  parent="menu_khach"
+                  sequence="3"
+                  action="action_don_thue_xe"/>
+        <menuitem name="Thông kê" 
+                  id="menu_thong_ke" 
+                  parent="menu_root"
+                  sequence="1"
+                  action="action_thong_ke"/>
     </data>
 </odoo>

@@ -8,12 +8,14 @@
                     <sheet>
                         <group col = "4">
                                 <field name="name" string="Biển số xe"/>
-                                <field name="loai_xe" string="Loại xe"/>
+                                <field name="loai_xe_id" string="Loại xe"/>
                                 <field name="model" string="Model"/>
                                 <field name="manufacturer" string="Hãng sản xuất"/>
                                 <field name="year" string="Năm sản xuất"/>
                                 <field name="status" string="Trạng thái" readonly = "1"/>
                                 <field name="driver_id" string="Xe được giao"/>
+                                <field name="phuong_tien_id" string="Khách Thuê xe"/>
+
                         </group>
                         <notebook>
                             <page string = "Thông tin nhiên liệu">
@@ -22,8 +24,14 @@
                             <page string = "Định vị GPS">
                                 <field name="gps_ids"/>
                             </page>
-                            <page string = "Lịch sử xe">
+                            <page string = "Lịch sử hoạt động của xe">
                                 <field name="lich_su_xe_ids"/>
+                            </page>
+                            <page string = "Chuyến đi của xe">
+                                <field name="chuyen_di_ids"/>
+                            </page>
+                            <page string = "Thông tin bảo dưỡng">
+                                <field name="bao_tri_ids"/>
                             </page>
                         </notebook>
                     </sheet>
@@ -34,32 +42,37 @@
             <field name="name">phuong.tien.tree</field>
             <field name="model">phuong_tien</field>
             <field name="arch" type="xml">
-                <tree string="Danh sách Phương Tiện">
+                <tree string="Danh sách Phương Tiện" limit= "80">
                     <field name="name" string="Biển số xe"/>
-                    <field name="loai_xe" string="Loại xe"/>
+                    <field name="loai_xe_id" string="Loại xe"/>
                     <field name="model" string="Model"/>
                     <field name="manufacturer" string="Hãng sản xuất"/>  
                     <field name="year" string="Năm sản xuất"/>
                     <field name="status" string="Trạng thái"/>
                     <field name="driver_id" string="Xe được giao"/>
+                    <field name="phuong_tien_id" string="Khách Thuê xe"/>
                 </tree>
             </field>
         </record>
-        
+
         <record id="view_phuong_tien_search" model="ir.ui.view">
             <field name="name">phuong.tien.search</field>
             <field name="model">phuong_tien</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="name"/>
-                    <field name="loai_xe"/>
-                    <field name="manufacturer"/>
-                    <field name="status"/> 
-                    <group string="Trạng thái">
-                        <filter string="Xe đã giao" name="da_giao" domain="[('status', '=', 'xe_da_giao')]"/>
-                        <filter string="Xe chưa giao" name="chua_giao" domain="[('status', '=', 'xe_chua_giao')]"/>
-                        <filter string="Xe bảo trì" name="bao_tri" domain="[('status', '=', 'xe_bao_tri')]"/>
-                    </group>
+                    <searchpanel>
+                        <field name="status" string="Trạng thái" select = "multi"/>
+                    </searchpanel>
+
+                    <field name="name" string="Biển số xe"/>
+                    <field name="loai_xe_id" string="Loại xe"/>
+                    <field name="status" string="Trạng thái"/>
+                    
+                    <filter name="filter_all" string="Tất cả" domain="[]"/>
+                    <filter name="filter_rented" string="Đang hoạt động" domain="[('status', '=', 'xe_da_giao')]"/>
+                    <filter name="filter_not_rented" string="Chưa hoạt động" domain="[('status', '=', 'xe_chua_giao')]"/>
+                    <filter name="filter" string="Đang bảo trì" domain="[('status', '=', 'xe_bao_tri')]"/>
+                    
                 </search>
             </field>
         </record>
@@ -67,8 +80,8 @@
             <field name="name">Phương Tiện</field>
             <field name="res_model">phuong_tien</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="view_phuong_tien_tree"/>
+            <field name="search_view_id" ref="view_phuong_tien_search"/>
         </record>
-        
+
     </data>
 </odoo>

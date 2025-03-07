@@ -70,3 +70,4 @@ Người sử dụng truy cập theo đường dẫn _http://localhost:8069/_ đ
 
 Hoàn tất
     
+![Giao diện trang phương tiện](images/phuong_tien.png)

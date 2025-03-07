@@ -1,41 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="view_khach_thue_form" model="ir.ui.view">
-        <field name="name">khach.thue.form</field>
-        <field name="model">khach_thue</field>
-        <field name="arch" type="xml">
-            <form string="Khách Thuê">
-                    <group col ="4">
-                            <field name="ten_khach"/>
-                            <field name="sdt_khach"/>
-                            <field name="dia_chi"/>
-                            <field name="can_cuoc"/>
-                      
-                    </group>
-                    <notebook>
-                            <page string = "Đơn thuê xe">
-                                <field name="don_thue_xe_ids"/>
-                            </page>
-                    </notebook>
-            </form>
-        </field>
-    </record>
-
+    <!-- Tree View (Danh sách khách thuê) -->
     <record id="view_khach_thue_tree" model="ir.ui.view">
         <field name="name">khach.thue.tree</field>
         <field name="model">khach_thue</field>
         <field name="arch" type="xml">
-            <tree string="Khách Thuê">
-                <field name="ten_khach"/>
+            <tree>
+                <field name="name"/>
                 <field name="sdt_khach"/>
                 <field name="dia_chi"/>
                 <field name="can_cuoc"/>
+                <field name="trang_thai" readonly = "1"/>
             </tree>
+        </field>
+    </record>
+    <record id="view_khach_thue_form" model="ir.ui.view">
+        <field name="name">khach.thue.form</field>
+        <field name="model">khach_thue</field>
+        <field name="arch" type="xml">
+            <form string="Chi Tiết Khách Thuê">
+                <sheet>
+                    <group col = "4">
+                        
+                            <field name="name"/>
+                            <field name="sdt_khach"/>
+                            <field name="dia_chi"/>
+                            <field name="can_cuoc"/>
+                            <field name="trang_thai" readonly = "1"/>
+                    </group>
+                    <notebook>
+                        <page string="Đơn Thuê Xe">
+                            <field name="don_thue_xe_ids">
+                            </field>
+                        </page>
+                        <page string="Phương Tiện">
+                            <field name="khach_ids">
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
         </field>
     </record>
 
     <record id="action_khach_thue" model="ir.actions.act_window">
-        <field name="name">Khách Thuê</field>
+        <field name="name">Khách Thuê Xe</field>
         <field name="res_model">khach_thue</field>
         <field name="view_mode">tree,form</field>
+
     </record>
 </odoo>

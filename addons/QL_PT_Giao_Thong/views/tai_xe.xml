@@ -1,53 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <odoo>
-    <data>
+    <record id="view_tai_xe_tree" model="ir.ui.view">
+        <field name="name">tai_xe.tree</field>
+        <field name="model">tai_xe</field>
+        <field name="arch" type="xml">
+            <tree string="Danh sách tài xế">
+                <field name="name"/>
+                <field name="license_number"/>
+                <field name="phone"/>
+                <field name="can_cuoc"/>
+                <field name="trang_thai" readonly = "1"/>
+            </tree>
+        </field>
+    </record>
 
-        <!-- Form View for TaiXe -->
-        <record id="view_tai_xe_form" model="ir.ui.view">
-            <field name="name">tai_xe.form</field>
-            <field name="model">tai_xe</field>
-            <field name="arch" type="xml">
-                <form>
-                    <sheet>
-                        <div class="oe_read_only" style="font-size:25px">Thông tin tài xế</div>
-                        <group col="4" string="Thông tin tài xế">
-                            <field name="name" string="Tên đầy đủ" required="1"/>
-                            <field name="license_number" string="Số giấy phép" required="1"/>
-                            <field name="phone" string="Số điện thoại"/>
-                        </group>
-                    </sheet>
+    <record id="view_tai_xe_form" model="ir.ui.view">
+        <field name="name">tai_xe.form</field>
+        <field name="model">tai_xe</field>
+        <field name="arch" type="xml">
+            <form string="Thông tin tài xế">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="license_number"/>
+                        <field name="phone"/>
+                        <field name="can_cuoc"/>
+                        <field name="trang_thai" readonly = "1"/>
+                    </group>
                     <notebook>
-                        <page string="Xe được chỉ định">
-                            <field name="assigned_vehicle" widget="one2many_list"/>
-                        </page>
-                        <page string="Đơn Đăng kí">
-                            <field name="don_dang_ky_ids" widget="one2many_list" readonly = "1" />
-                        </page>
-                    </notebook>
-                </form>
-            </field>
-        </record>
+                    <page string="Xe được chỉ định">
+                        <field name="chuyen_di" widget="one2many_list"/>
+                    </page>
+                    <page string="Đơn Đăng kí">
+                        <field name="don_dang_ky_ids" widget="one2many_list" readonly = "1" />
+                    </page>
+                </notebook>    
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <record id="view_tai_xe_tree" model="ir.ui.view">
-            <field name="name">tai_xe.tree</field>
-            <field name="model">tai_xe</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <field name="name" string="Tên đầy đủ"/>
-                    <field name="license_number" string="Số giấy phép"/>
-                    <field name="phone" string="Số điện thoại"/>
-                    <field name="trang_thai" string="Trạng thái"/>
-                </tree>
-            </field>
-        </record>
-        
-        <record id="action_tai_xe" model="ir.actions.act_window">
-            <field name="name">Quản lý tài xế</field>
-            <field name="res_model">tai_xe</field>
-            <field name="view_mode">tree,form</field>
-            <field name="domain">[]</field>  <!-- Xóa domain nếu có -->
-            
-        </record>
-
-    </data>
+    <record id="action_tai_xe" model="ir.actions.act_window">
+        <field name="name">Tài xế</field>
+        <field name="res_model">tai_xe</field>
+        <field name="view_mode">tree,form</field>
+    </record>
 </odoo>
