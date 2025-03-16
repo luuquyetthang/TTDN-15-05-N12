@@ -1,7 +1,7 @@
 <odoo>
     <data>
         <record id="view_phuong_tien_form" model="ir.ui.view">
-            <field name="name">phuong.tien.form</field>
+            <field name="name">phuong_tien.form</field>
             <field name="model">phuong_tien</field>
             <field name="arch" type="xml">
                 <form string="Phương Tiện">
@@ -13,9 +13,20 @@
                                 <field name="manufacturer" string="Hãng sản xuất"/>
                                 <field name="year" string="Năm sản xuất"/>
                                 <field name="status" string="Trạng thái" readonly = "1"/>
-                                <field name="driver_id" string="Xe được giao"/>
-                                <field name="phuong_tien_id" string="Khách Thuê xe"/>
-
+                                <field name="driver_id" string="Xe được giao"  can_search_more="True"/>
+                                <field name="phuong_tien_id" string="Khách Thuê xe" can_search_more="True"/>
+                                
+                                <field name="image_ids">
+                                    <tree editable="bottom">
+                                        <field name="image" widget="image"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <field name="image" widget="image"/>
+                                        </sheet>
+                                    </form>
+                                </field>
+                                
                         </group>
                         <notebook>
                             <page string = "Thông tin nhiên liệu">
@@ -39,10 +50,11 @@
             </field>
         </record>
         <record id="view_phuong_tien_tree" model="ir.ui.view">
-            <field name="name">phuong.tien.tree</field>
+            <field name="name">phuong_tien.tree</field>
             <field name="model">phuong_tien</field>
             <field name="arch" type="xml">
                 <tree string="Danh sách Phương Tiện" limit= "80">
+                    <field name="main_image" widget="image" string="Hình ảnh"/>
                     <field name="name" string="Biển số xe"/>
                     <field name="loai_xe_id" string="Loại xe"/>
                     <field name="model" string="Model"/>
@@ -56,12 +68,13 @@
         </record>
 
         <record id="view_phuong_tien_search" model="ir.ui.view">
-            <field name="name">phuong.tien.search</field>
+            <field name="name">phuong_tien.search</field>
             <field name="model">phuong_tien</field>
             <field name="arch" type="xml">
                 <search>
                     <searchpanel>
-                        <field name="status" string="Trạng thái" select = "multi"/>
+                        <field name="status" string="Trạng thái" select="multi"/>
+                        <field name="loai_xe_id" string="Loại xe" select="multi"/>
                     </searchpanel>
 
                     <field name="name" string="Biển số xe"/>
@@ -71,11 +84,34 @@
                     <filter name="filter_all" string="Tất cả" domain="[]"/>
                     <filter name="filter_rented" string="Đang hoạt động" domain="[('status', '=', 'xe_da_giao')]"/>
                     <filter name="filter_not_rented" string="Chưa hoạt động" domain="[('status', '=', 'xe_chua_giao')]"/>
-                    <filter name="filter" string="Đang bảo trì" domain="[('status', '=', 'xe_bao_tri')]"/>
-                    
+                    <filter name="filter_maintenance" string="Đang bảo trì" domain="[('status', '=', 'xe_bao_tri')]"/>
                 </search>
+
             </field>
         </record>
+
+        <record id="view_bao_tri_xe_search" model="ir.ui.view">
+        <field name="name">bao_tri_xe.search</field>
+        <field name="model">bao_tri_xe</field>
+        <field name="arch" type="xml">
+            <search>
+                <searchpanel>
+                    <field name="trang_thai" string="Trạng thái" select="multi"/>
+                </searchpanel>
+
+                <field name="vehicle_id" string="Biển số xe"/>
+                <field name="ngay_bat_dau" string="Ngày bắt đầu bảo dưỡng"/>
+                <field name="ngay_ket_thuc" string="Ngày kết thúc bảo dưỡng"/>
+                <field name="cost" string="Chi phí"/>
+                <field name="next_ngay_ket_thuc" string="Ngày bảo dưỡng tiếp theo"/>
+                <field name="trang_thai" string="Trạng thái"/>
+                <filter name="filter_all" string="Tất cả" domain="[]"/>
+                <filter name="filter_in_progress" string="Đang bảo dưỡng" domain="[('trang_thai', '=', 'dang_bao_tri')]"/>
+                <filter name="filter_done" string="Đã Xong" domain="[('trang_thai', '=', 'da_xong')]"/>
+                
+            </search>
+        </field>
+    </record>
         <record id="action_phuong_tien" model="ir.actions.act_window">
             <field name="name">Phương Tiện</field>
             <field name="res_model">phuong_tien</field>

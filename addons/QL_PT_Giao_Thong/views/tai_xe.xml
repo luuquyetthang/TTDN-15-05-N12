@@ -6,6 +6,7 @@
         <field name="model">tai_xe</field>
         <field name="arch" type="xml">
             <tree string="Danh sách tài xế">
+                <field name="hinh_tai_xe" widget="image" class="oe_avatar" />
                 <field name="name"/>
                 <field name="license_number"/>
                 <field name="phone"/>
@@ -21,12 +22,17 @@
         <field name="arch" type="xml">
             <form string="Thông tin tài xế">
                 <sheet>
-                    <group>
+                    <group col="4">
                         <field name="name"/>
                         <field name="license_number"/>
                         <field name="phone"/>
                         <field name="can_cuoc"/>
                         <field name="trang_thai" readonly = "1"/>
+                        <field name="hinh_tai_xe" widget="image"/>
+                        <field name="hinh_giay_phep_truoc" widget="image"/>
+                        <field name="hinh_giay_phep_sau" widget="image"/>
+                        <field name="hinh_can_cuoc_truoc" widget="image"/>
+                        <field name="hinh_can_cuoc_sau" widget="image"/>
                     </group>
                     <notebook>
                     <page string="Xe được chỉ định">

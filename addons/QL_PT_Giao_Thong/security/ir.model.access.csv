@@ -11,3 +11,4 @@ access_khach_thue,khach_thue.khach_thue,model_khach_thue,base.group_user,1,1,1,1
 access_don_thue_xe,don_thue_xe.don_thue_xe,model_don_thue_xe,base.group_user,1,1,1,1
 access_loai_xe,loai_xe.loai_xe,model_loai_xe,base.group_user,1,1,1,1
 access_thong_ke,thong_ke.thong_ke,model_thong_ke,base.group_user,1,1,1,1
+access_anh_ne,anh_ne.anh_ne,model_anh_ne,base.group_user,1,1,1,1

@@ -6,6 +6,7 @@
         <field name="model">khach_thue</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="hinh_khach_thue" widget="image" class="oe_avatar"/>
                 <field name="name"/>
                 <field name="sdt_khach"/>
                 <field name="dia_chi"/>
@@ -27,6 +28,11 @@
                             <field name="dia_chi"/>
                             <field name="can_cuoc"/>
                             <field name="trang_thai" readonly = "1"/>
+                            <field name="hinh_khach_thue" widget="image" class="oe_avatar"/>
+                            <field name="hinh_can_cuoc_truoc" widget="image"/>
+                            <field name="hinh_can_cuoc_sau" widget="image"/>
+                            <field name="hinh_giay_phep_truoc" widget="image"/>
+                            <field name="hinh_giay_phep_sau" widget="image"/>
                     </group>
                     <notebook>
                         <page string="Đơn Thuê Xe">

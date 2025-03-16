@@ -4,6 +4,12 @@ class PhuongTien(models.Model):
     _name = "phuong_tien"
     _description = "Danh mục phương tiện"
 
+    image_ids = fields.One2many('anh_ne', 'phuong_id', string="Hình ảnh phương tiện")
+    main_image = fields.Binary(string="Ảnh đại diện", compute="_compute_main_image", store=True)
+    @api.depends('image_ids.image')
+    def _compute_main_image(self):
+        for record in self:
+            record.main_image = record.image_ids[:1].image if record.image_ids else False
     name = fields.Char(string="Biển số xe", required=True)  
     model = fields.Char(string="Model") 
     manufacturer = fields.Char(string="Hãng sản xuất")  

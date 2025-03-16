@@ -11,7 +11,11 @@ class DonThueXe(models.Model):
     can_cuoc = fields.Char(string="Số CCCD", tracking=True, unique=True)  
     ma_don = fields.Char(string="Mã đơn", required=True)
     khach_id = fields.Many2one('khach_thue', string="Khách thuê") 
-
+    hinh_khach_thue = fields.Image(string="Ảnh khách thuê")
+    hinh_can_cuoc_truoc = fields.Image(string="Ảnh căn cước (Mặt trước)")
+    hinh_can_cuoc_sau = fields.Image(string="Ảnh căn cước (Mặt sau)")
+    hinh_giay_phep_truoc = fields.Image(string="Ảnh giấy phép (Mặt trước)")
+    hinh_giay_phep_sau = fields.Image(string="Ảnh giấy phép (Mặt sau)")
     # Thêm các trường lưu lại thông tin tài xế khi xóa
     saved_khach_thue_name = fields.Char(string="Tên đầy đủ")
     saved_sdt_khach = fields.Char(string="Số điện thoại")
@@ -60,10 +64,17 @@ class DonThueXe(models.Model):
                     'dia_chi': record.dia_chi,
                     'can_cuoc': record.can_cuoc,
                     'trang_thai': 'duyet',  
+                    # Sao chép ảnh từ đơn thuê xe
+                    'hinh_khach_thue': record.hinh_khach_thue,
+                    'hinh_can_cuoc_truoc': record.hinh_can_cuoc_truoc,
+                    'hinh_can_cuoc_sau': record.hinh_can_cuoc_sau,
+                    'hinh_giay_phep_truoc': record.hinh_giay_phep_truoc,
+                    'hinh_giay_phep_sau': record.hinh_giay_phep_sau,
                 })
                 record.khach_id = khach_thue.id  
             else:
                 record.khach_id.write({'trang_thai': 'duyet'})  
+
 
     def action_huy(self):
         self.write({'trang_thai': 'huy'})

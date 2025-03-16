@@ -1,12 +1,14 @@
 <odoo>
     <data>
+        <!-- Action mở giao diện thống kê -->
         <record id="action_thong_ke" model="ir.actions.act_window">
             <field name="name">Thống kê Phương Tiện</field>
             <field name="res_model">thong_ke</field>
-            <field name="view_mode">graph</field>
-            <!-- <field name="view_mode">form</field> -->
+            <field name="view_mode">pivot,tree,form,graph</field> <!-- Hỗ trợ cả 3 chế độ -->
             <field name="target">current</field>
         </record>
+
+        <!-- Form View (Giao diện nhập liệu) -->
         <record id="view_thong_ke_form" model="ir.ui.view">
             <field name="name">thong_ke.form</field>
             <field name="model">thong_ke</field>
@@ -16,33 +18,65 @@
                         <div class="oe_title">
                             <h2>📊 Thống Kê Phương Tiện</h2>
                         </div>
-                        <group>
-                            <field name="total_vehicles_int"/>
-                            <field name="active_vehicles_int"/>
-                            <field name="maintenance_vehicles_int"/>
-                            <field name="available_vehicles_int"/>
-                        </group>
-                        <group>
-                            <field name="vehicle_by_type" widget="text"/>
-                            <field name="vehicle_by_driver" widget="text"/>
-                        </group>
+                        <notebook>
+                            <!-- Tab Thống kê Tổng Quan -->
+                            <page string="Tổng Quan">
+                                <group col = "4">
+                                    
+                                        <field name="total_vehicles_int"/>
+                                        <field name="active_vehicles_int"/>
+                                    
+                                        <field name="maintenance_vehicles_int"/>
+                                        <field name="available_vehicles_int"/>
+                                        <field name="vehicle_by_type" widget="text"/>
+                                        <field name="vehicle_by_driver" widget="text"/>
+                                </group>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
         </record>
-        <record id="view_thong_ke_graph" model="ir.ui.view">
-            <field name="name">thong_ke.graph</field>
+
+        
+        <!-- <record id="view_thong_ke_tree" model="ir.ui.view">
+            <field name="name">thong_ke.tree</field>
             <field name="model">thong_ke</field>
             <field name="arch" type="xml">
-                <graph string="Thống kê Phương Tiện" type="bar">
-                    <field name="total_vehicles_int" type="measure" operator="sum"/>
-                    <field name="active_vehicles_int" type="measure" operator="sum"/>
-                    <field name="maintenance_vehicles_int" type="measure" operator="sum"/>
-                    <field name="available_vehicles_int" type="measure" operator="sum"/>
-
-                </graph>
-
+                <tree string="Thống kê Phương Tiện">
+                    <field name="total_vehicles_int"/>
+                    <field name="active_vehicles_int"/>
+                    <field name="maintenance_vehicles_int"/>
+                    <field name="available_vehicles_int"/>
+                    <field name="vehicle_by_type"/>
+                    <field name="vehicle_by_driver"/>
+                </tree>
             </field>
-        </record>
+        </record> -->
+
+        <!-- Graph View (Biểu đồ thống kê) -->
+        <record id="view_thong_ke_pivot" model="ir.ui.view">
+                <field name="name">thong_ke.pivot</field>
+                <field name="model">thong_ke</field>
+                <field name="arch" type="xml">
+                    <pivot string="Thống kê Phương Tiện">
+                        <field name="active_vehicles_int" type="measure"/>
+                        <field name="maintenance_vehicles_int" type="measure"/>
+                        <field name="available_vehicles_int" type="measure"/>
+                    </pivot>
+                </field>
+            </record>
+
+            <record id="view_thong_ke_graph" model="ir.ui.view">
+                <field name="name">thong_ke.graph</field>
+                <field name="model">thong_ke</field>
+                <field name="arch" type="xml">
+                    <graph string="Thống kê Phương Tiện" type="bar">
+                        <field name="active_vehicles_int" type="measure"/>
+                        <field name="maintenance_vehicles_int" type="measure"/>
+                        <field name="available_vehicles_int" type="measure"/>
+                    </graph>
+                </field>
+            </record>
     </data>
 </odoo>

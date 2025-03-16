@@ -5,6 +5,7 @@
         <field name="model">don_thue_xe</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="hinh_khach_thue" widget="image" class="oe_avatar" string="Ảnh khách thuê"/>
                 <field name="name" string = "Tên khách hàng"/>
                 <field name="ma_don" string = "Tên đơn"/>
                 <field name="sdt_khach" string = "Số điện thoại khách hàng"/>
@@ -42,6 +43,11 @@
                         <field name="dia_chi" string = "Địa chỉ đón khách"/>
                         <field name="xe" string = "Loại xe"/>
                         <field name="trang_thai" string = "Trạng thái" readonly = "1"/>
+                        <field name="hinh_khach_thue" widget="image" class="oe_avatar" string="Ảnh khách thuê"/>
+                        <field name="hinh_giay_phep_truoc" widget="image" class="oe_avatar" string="Mặt trước giấy phép lái xe"/>
+                        <field name="hinh_giay_phep_sau" widget="image" class="oe_avatar" string="Mặt sau giấy phép lái xe"/>
+                        <field name="hinh_can_cuoc_truoc" widget="image" class="oe_avatar" string="Mặt trước căn cước"/>
+                        <field name="hinh_can_cuoc_sau" widget="image" class="oe_avatar" string="Mặt sau căn cước"/>
                     </group>
                 </sheet>
             </form>

@@ -19,3 +19,8 @@ class TaiXe(models.Model):
         ('duyet', 'Đã duyệt'),
         ('huy', 'Đã hủy')
     ], string="Trạng thái", default='cho_duyet')
+    hinh_tai_xe = fields.Image(string="Ảnh tài xế")
+    hinh_giay_phep_truoc = fields.Image(string="Ảnh giấy phép (Mặt trước)")
+    hinh_giay_phep_sau = fields.Image(string="Ảnh giấy phép (Mặt sau)")
+    hinh_can_cuoc_truoc = fields.Image(string="Ảnh căn cước (Mặt trước)")
+    hinh_can_cuoc_sau = fields.Image(string="Ảnh căn cước (Mặt sau)")

@@ -13,8 +13,13 @@ class dondangky(models.Model):
     ngay_dang_ky = fields.Date(string="Ngày đăng ký", default=fields.Date.today)
     can_cuoc = fields.Integer(string="Căn cước công dân")
     ghi_chu = fields.Text(string="Ghi chú")
+    hinh_tai_xe = fields.Image(string="Ảnh tài xế")
+    hinh_giay_phep_truoc = fields.Image(string="Ảnh giấy phép (Mặt trước)")
+    hinh_giay_phep_sau = fields.Image(string="Ảnh giấy phép (Mặt sau)")
+    hinh_can_cuoc_truoc = fields.Image(string="Ảnh căn cước (Mặt trước)")
+    hinh_can_cuoc_sau = fields.Image(string="Ảnh căn cước (Mặt sau)")
+  
 
-    # Thêm các trường lưu lại thông tin tài xế khi xóa
     saved_tai_xe_name = fields.Char(string="Tên tài xế ")
     saved_license_number = fields.Char(string="Số giấy phép")
     saved_phone = fields.Char(string="SĐT tài xế đã lưu")
@@ -49,16 +54,30 @@ class dondangky(models.Model):
         self.write({'trang_thai': 'duyet'})
         for record in self:
             if not record.tai_xe_id:
+                # Tạo tài xế mới với thông tin và hình ảnh từ đơn đăng ký
                 tai_xe = self.env['tai_xe'].create({
                     'name': record.name,
                     'license_number': record.license_number,
                     'phone': record.phone,
                     'can_cuoc': record.can_cuoc,
-                    'trang_thai': 'duyet',  
+                    'trang_thai': 'duyet',
+                    'hinh_tai_xe': record.hinh_tai_xe,
+                    'hinh_giay_phep_truoc': record.hinh_giay_phep_truoc,
+                    'hinh_giay_phep_sau': record.hinh_giay_phep_sau,
+                    'hinh_can_cuoc_truoc': record.hinh_can_cuoc_truoc,
+                    'hinh_can_cuoc_sau': record.hinh_can_cuoc_sau,
                 })
                 record.tai_xe_id = tai_xe.id
             else:
-                record.tai_xe_id.write({'trang_thai': 'duyet'})  
+                # Cập nhật tài xế nếu đã tồn tại
+                record.tai_xe_id.write({
+                    'trang_thai': 'duyet',
+                    'hinh_tai_xe': record.hinh_tai_xe,
+                    'hinh_giay_phep_truoc': record.hinh_giay_phep_truoc,
+                    'hinh_giay_phep_sau': record.hinh_giay_phep_sau,
+                    'hinh_can_cuoc_truoc': record.hinh_can_cuoc_truoc,
+                    'hinh_can_cuoc_sau': record.hinh_can_cuoc_sau,
+                })
 
     def action_huy(self):
         self.write({'trang_thai': 'huy'})

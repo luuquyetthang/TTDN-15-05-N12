@@ -12,3 +12,4 @@ from . import khach_thue
 from . import don_thue_xe
 from . import loai_xe
 from . import thong_ke
+from . import anh_ne

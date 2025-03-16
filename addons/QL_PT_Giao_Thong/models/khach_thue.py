@@ -17,3 +17,8 @@ class KhachThueXe(models.Model):
         ('duyet', 'Đã duyệt'),
         ('huy', 'Đã hủy')
     ], string="Trạng thái", default='cho_duyet')
+    hinh_khach_thue = fields.Image(string="Ảnh khách thuê")
+    hinh_can_cuoc_truoc = fields.Image(string="Ảnh căn cước (Mặt trước)")
+    hinh_can_cuoc_sau = fields.Image(string="Ảnh căn cước (Mặt sau)")
+    hinh_giay_phep_truoc = fields.Image(string="Ảnh giấy phép (Mặt trước)")
+    hinh_giay_phep_sau = fields.Image(string="Ảnh giấy phép (Mặt sau)")
