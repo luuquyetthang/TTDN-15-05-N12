@@ -70,5 +70,12 @@ Người sử dụng truy cập theo đường dẫn _http://localhost:8069/_ đ
 
 Hoàn tất
     
-![Giao diện trang phương tiện](images/phuong_tien.png)
-![Giao diện trang thông kê](images/thong_ke.png)
+![Giao diện trang phương tiện](images/1.png)
+![1](images/2.png)
+![2](images/3.png)
+![3](images/4.png)
+![4](images/5.png)
+![5](images/6.png)
+![6](images/7.png)
+![7](images/8.png)
+![8](images/9.png)
