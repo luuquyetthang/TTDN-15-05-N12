@@ -67,9 +67,15 @@ python3 odoo-bin.py -c odoo.conf -u all
 ```
 
 Người sử dụng truy cập theo đường dẫn _http://localhost:8069/_ để đăng nhập vào hệ thống.
+# 5. Chạy hệ thống và cài đặt các ứng dụng cần thiết
+Tìm kiếm
+```
+Quản lý phương tiện
+```
+cài đặt
 
 Hoàn tất
-    
+# Một số giao diện đã làm   
 ![Giao diện trang phương tiện](images/1.png)
 ![1](images/2.png)
 ![2](images/3.png)
