@@ -75,9 +75,10 @@ Quản lý phương tiện
 cài đặt
 
 Hoàn tất
-# Một số giao diện đã làm   
+# Một số giao diện đã làm  
+ ![1](images/11.png)
 ![Giao diện trang phương tiện](images/1.png)
-![1](images/10.png)
+![2](images/10.png)
 ![4](images/5.png)
 ![5](images/6.png)
 ![6](images/7.png)

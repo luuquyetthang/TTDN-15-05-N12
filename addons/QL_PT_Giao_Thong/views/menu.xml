@@ -14,11 +14,7 @@
                   action="action_phuong_tien"/>
 
         
-        <menuitem name="Quản lý chuyến đi"
-                  id="menu_chuyen_di"
-                  parent="menu_chinh"
-                  sequence="3"
-                  action="action_chuyen_di"/>
+        
 
         <menuitem name="Bảo trì xe"
                   id="menu_bao_tri_xe"

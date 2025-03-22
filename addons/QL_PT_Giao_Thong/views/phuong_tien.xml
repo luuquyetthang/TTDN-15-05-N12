@@ -38,9 +38,7 @@
                             <page string = "Lịch sử hoạt động của xe">
                                 <field name="lich_su_xe_ids"/>
                             </page>
-                            <page string = "Chuyến đi của xe">
-                                <field name="chuyen_di_ids"/>
-                            </page>
+                            
                             <page string = "Thông tin bảo dưỡng">
                                 <field name="bao_tri_ids"/>
                             </page>
