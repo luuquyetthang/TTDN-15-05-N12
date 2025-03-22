@@ -1,5 +1,5 @@
 <odoo>
-    <!-- Tree View -->
+
     <record id="view_loai_xe_tree" model="ir.ui.view">
         <field name="name">loai_xe.tree</field>
         <field name="model">loai_xe</field>
@@ -39,7 +39,7 @@
 </record>
 
 
-    <!-- Action -->
+
     <record id="action_loai_xe" model="ir.actions.act_window">
         <field name="name">Danh Mục Loại Xe</field>
         <field name="res_model">loai_xe</field>

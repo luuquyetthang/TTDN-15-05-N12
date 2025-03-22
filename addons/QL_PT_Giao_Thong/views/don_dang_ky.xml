@@ -1,5 +1,4 @@
 <odoo>
-    <!-- Form View -->
     <record id="view_don_xin_dang_ky_tai_xe_form" model="ir.ui.view">
         <field name="name">don_dang_ky.form</field>
         <field name="model">don_dang_ky</field>

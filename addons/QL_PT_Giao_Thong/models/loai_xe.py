@@ -7,8 +7,7 @@ class DanhMucLoaiXe(models.Model):
     name = fields.Char(string="Tên danh mục", required=True)
     description = fields.Char(string="Mô tả")
     phuong_tien_ids = fields.One2many('phuong_tien', 'loai_xe_id', string="Danh sách phương tiện")
-
-    # Tạo trường đếm số lượng phương tiện
+    
     phuong_tien_count = fields.Integer(string="Số lượng xe", compute="_compute_phuong_tien_count")
 
     @api.depends('phuong_tien_ids')

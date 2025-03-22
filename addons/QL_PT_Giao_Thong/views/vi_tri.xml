@@ -1,5 +1,5 @@
 <odoo>
-    <!-- Form View -->
+
     <record id="view_vi_tri_form" model="ir.ui.view">
         <field name="name">vi_tri.form</field>
         <field name="model">vi_tri</field>
@@ -17,7 +17,7 @@
         </field>
     </record>
 
-    <!-- Tree View -->
+
     <record id="view_vi_tri_tree" model="ir.ui.view">
         <field name="name">vi_tri.tree</field>
         <field name="model">vi_tri</field>
@@ -31,7 +31,7 @@
         </field>
     </record>
 
-    <!-- Action -->
+  
     <record id="action_vi_tri" model="ir.actions.act_window">
         <field name="name">Danh sách vị trí GPS</field>
         <field name="res_model">vi_tri</field>

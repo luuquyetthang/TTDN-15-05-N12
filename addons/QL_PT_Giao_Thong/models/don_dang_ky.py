@@ -54,7 +54,7 @@ class dondangky(models.Model):
         self.write({'trang_thai': 'duyet'})
         for record in self:
             if not record.tai_xe_id:
-                # Tạo tài xế mới với thông tin và hình ảnh từ đơn đăng ký
+       
                 tai_xe = self.env['tai_xe'].create({
                     'name': record.name,
                     'license_number': record.license_number,
@@ -69,7 +69,7 @@ class dondangky(models.Model):
                 })
                 record.tai_xe_id = tai_xe.id
             else:
-                # Cập nhật tài xế nếu đã tồn tại
+               
                 record.tai_xe_id.write({
                     'trang_thai': 'duyet',
                     'hinh_tai_xe': record.hinh_tai_xe,

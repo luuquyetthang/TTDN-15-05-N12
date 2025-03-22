@@ -4,12 +4,12 @@ class BaoTriXe(models.Model):
     _name = "bao_tri_xe"
     _description = "Bảo dưỡng xe"
 
-    vehicle_id = fields.Many2one('phuong_tien', string="Phương tiện", required=True)  # Xe được bảo trì
+    vehicle_id = fields.Many2one('phuong_tien', string="Phương tiện", required=True)  
     ngay_bat_dau = fields.Date(string="Ngày bắt đầu")
-    ngay_ket_thuc = fields.Date(string="Ngày kết thúc", required=True)  # Ngày bảo trì
-    description = fields.Text(string="Miêu tả")  # Mô tả công việc bảo trì
-    cost = fields.Float(string="Trị giá")  # Chi phí bảo trì
-    next_ngay_ket_thuc = fields.Date(string="Ngày bảo trì tiếp theo")  # Ngày bảo trì tiếp theo
+    ngay_ket_thuc = fields.Date(string="Ngày kết thúc", required=True)  
+    description = fields.Text(string="Miêu tả")  
+    cost = fields.Float(string="Trị giá")  
+    next_ngay_ket_thuc = fields.Date(string="Ngày bảo trì tiếp theo")  
     trang_thai = fields.Selection([
         ('da_xong', 'Đã xong'),
         ('dang_bao_tri', 'Đang bảo dưỡng')
@@ -20,7 +20,7 @@ class BaoTriXe(models.Model):
         """ Khi tạo bảo trì, chuyển phương tiện sang trạng thái bảo trì """
         record = super(BaoTriXe, self).create(vals)
         if record.vehicle_id:
-            record.vehicle_id.write({'status': 'xe_bao_tri'})  # Cập nhật trạng thái phương tiện
+            record.vehicle_id.write({'status': 'xe_bao_tri'}) 
         return record
 
     @api.onchange('ngay_ket_thuc')

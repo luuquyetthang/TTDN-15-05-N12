@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Tree View (Danh sách khách thuê) -->
     <record id="view_khach_thue_tree" model="ir.ui.view">
         <field name="name">khach.thue.tree</field>
         <field name="model">khach_thue</field>

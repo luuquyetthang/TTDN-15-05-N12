@@ -45,12 +45,33 @@
             </tree>
         </field>
     </record>
+    <record id="view_bao_tri_xe_search" model="ir.ui.view">
+        <field name="name">bao_tri_xe.search</field>
+        <field name="model">bao_tri_xe</field>
+        <field name="arch" type="xml">
+            <search>
+                <searchpanel>
+                    <field name="trang_thai" string="Trạng thái" select="multi"/>
+                </searchpanel>
 
-    <!-- Action -->
+                <field name="vehicle_id" string="Biển số xe"/>
+                <field name="ngay_bat_dau" string="Ngày bắt đầu bảo dưỡng"/>
+                <field name="ngay_ket_thuc" string="Ngày kết thúc bảo dưỡng"/>
+                <field name="cost" string="Chi phí"/>
+                <field name="next_ngay_ket_thuc" string="Ngày bảo dưỡng tiếp theo"/>
+                <field name="trang_thai" string="Trạng thái"/>
+                <filter name="filter_all" string="Tất cả" domain="[]"/>
+                <filter name="filter_in_progress" string="Đang bảo dưỡng" domain="[('trang_thai', '=', 'dang_bao_tri')]"/>
+                <filter name="filter_done" string="Đã Xong" domain="[('trang_thai', '=', 'da_xong')]"/>
+                
+            </search>
+        </field>
+    </record>
     <record id="action_bao_tri_xe" model="ir.actions.act_window">
         <field name="name">Danh sách bảo trì xe</field>
         <field name="res_model">bao_tri_xe</field>
         <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_bao_tri_xe_search"/>
     </record>
     
 </odoo>

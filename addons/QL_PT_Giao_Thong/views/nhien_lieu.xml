@@ -1,5 +1,5 @@
 <odoo>
-    <!-- Form View -->
+
     <record id="view_nhien_lieu_form" model="ir.ui.view">
         <field name="name">nhien_lieu.form</field>
         <field name="model">nhien_lieu</field>
@@ -18,7 +18,7 @@
         </field>
     </record>
 
-    <!-- Tree View -->
+
     <record id="view_nhien_lieu_tree" model="ir.ui.view">
         <field name="name">nhien_lieu.tree</field>
         <field name="model">nhien_lieu</field>
@@ -33,7 +33,7 @@
         </field>
     </record>
 
-    <!-- Action -->
+
     <record id="action_nhien_lieu" model="ir.actions.act_window">
         <field name="name">Danh sách nhiên liệu</field>
         <field name="res_model">nhien_lieu</field>

@@ -16,7 +16,6 @@ class DonThueXe(models.Model):
     hinh_can_cuoc_sau = fields.Image(string="Ảnh căn cước (Mặt sau)")
     hinh_giay_phep_truoc = fields.Image(string="Ảnh giấy phép (Mặt trước)")
     hinh_giay_phep_sau = fields.Image(string="Ảnh giấy phép (Mặt sau)")
-    # Thêm các trường lưu lại thông tin tài xế khi xóa
     saved_khach_thue_name = fields.Char(string="Tên đầy đủ")
     saved_sdt_khach = fields.Char(string="Số điện thoại")
     saved_dia_chi = fields.Char(string="Địa chỉ")
@@ -64,7 +63,7 @@ class DonThueXe(models.Model):
                     'dia_chi': record.dia_chi,
                     'can_cuoc': record.can_cuoc,
                     'trang_thai': 'duyet',  
-                    # Sao chép ảnh từ đơn thuê xe
+
                     'hinh_khach_thue': record.hinh_khach_thue,
                     'hinh_can_cuoc_truoc': record.hinh_can_cuoc_truoc,
                     'hinh_can_cuoc_sau': record.hinh_can_cuoc_sau,
@@ -78,7 +77,7 @@ class DonThueXe(models.Model):
 
     def action_huy(self):
         self.write({'trang_thai': 'huy'})
-        # Xóa tài xế nếu có
+        
         for record in self:
             if record.khach_id:
                 record.khach_id.write({'trang_thai': 'huy'}) 

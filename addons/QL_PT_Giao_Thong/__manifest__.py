@@ -42,5 +42,12 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'assets': {
+    'web.assets_backend': [
+        'QL_PT_Giao_Thong/static/src/js/vehicle_chart.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js',  # Load Chart.js từ CDN
+    ],
+},
+
 
 }
