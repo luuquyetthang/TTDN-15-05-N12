@@ -76,7 +76,7 @@ cài đặt
 
 Hoàn tất
 # Một số giao diện đã làm  
-![1](images/11.png)
+![1](images/11.PNG)
 ![Giao diện trang phương tiện](images/1.png)
 ![2](images/10.png)
 ![4](images/5.png)
